@@ -1,4 +1,5 @@
 import time
+import random
 
 class ticcy():
     def __init__(self, name):
@@ -14,8 +15,26 @@ class ticcy():
         for y in range(3):
             self.board.append(i)
 
+        print(self.board)
+
     def havego(self, coord, typ):
         self.board[coord.x, coord.y] = typ
+
+    def workout(self, typ):
+        if (self.board == [['', '', ''], ['', '', ''], ['', '', '']]):
+            x = random.randint(0, 3)
+            y = random.randint(0, 3)
+            
+            self.board[x, y] = typ
+    
+    def blank(self):
+        i = []
+
+        for x in range(3):
+            i.append("")
+
+        for y in range(3):
+            self.board.append(i)
 
     def __str__(self):
         out = "[" + self.name + "]\n"
