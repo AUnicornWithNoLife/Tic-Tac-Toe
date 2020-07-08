@@ -22,10 +22,22 @@ class ticcy():
 
     def workout(self, typ):
         if (self.board == [['', '', ''], ['', '', ''], ['', '', '']]):
-            x = random.randint(0, 3)
-            y = random.randint(0, 3)
+            x = random.randint(0, 2)
+            y = random.randint(0, 2)
             
-            self.board[x, y] = typ
+            self.board[x][y] = typ
+        else:
+            a = True
+
+            while a:
+                x = random.randint(0, 2)
+                y = random.randint(0, 2)
+
+                if self.board[x][y] == "X" or self.board[x][y] == "Y":
+                    self.board[x][y] = typ
+
+    def winner(self):
+        print()
     
     def blank(self):
         i = []
@@ -41,7 +53,7 @@ class ticcy():
         
         for x in self.board:
             for y in x:
-                out += y
+                out += "|" + y + "|"
 
             out += "\n"
 
@@ -56,3 +68,20 @@ class vector2():
         return str(x) + ", " + str(y)
 
 a = ticcy("game1")
+
+a.workout("X")
+print(a)
+a.workout("Y")
+print(a)
+a.workout("X")
+print(a)
+a.workout("Y")
+print(a)
+a.workout("X")
+print(a)
+a.workout("Y")
+print(a)
+a.workout("X")
+print(a)
+a.workout("Y")
+print(a)
