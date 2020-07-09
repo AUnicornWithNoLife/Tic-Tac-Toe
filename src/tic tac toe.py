@@ -33,8 +33,15 @@ class ticcy():
                 x = random.randint(0, 2)
                 y = random.randint(0, 2)
 
-                if self.board[x][y] == "X" or self.board[x][y] == "Y":
-                    self.board[x][y] = typ
+                print(str(x) + ", " + str(y))
+                print(self.board)
+
+                if not(self.board[x][y] == "X" or self.board[x][y] == "O"):
+                    t = self.board[x]
+                    t[y] = typ
+                    self.board[x] = t
+
+                    a = False
 
     def winner(self):
         print()
@@ -71,17 +78,17 @@ a = ticcy("game1")
 
 a.workout("X")
 print(a)
-a.workout("Y")
+a.workout("O")
+print(a)
+a.workout("O")
+print(a)
+a.workout("O")
 print(a)
 a.workout("X")
 print(a)
-a.workout("Y")
+a.workout("O")
 print(a)
 a.workout("X")
 print(a)
-a.workout("Y")
-print(a)
-a.workout("X")
-print(a)
-a.workout("Y")
+a.workout("O")
 print(a)
